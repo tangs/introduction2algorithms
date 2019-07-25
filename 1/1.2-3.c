@@ -3,7 +3,7 @@
 
 int calc() {
     int n = 2;
-    while (8.0 * n * n < 64.0 * n * log2(n))
+    while(100 * n * n > pow(2.0, n))
         ++n;
     return n;
 }
