@@ -3,7 +3,7 @@
 
 int calcMax() {
     int n = 2;
-    while (8 * n * n < 64 * n * log2(n))
+    while (8.0 * n * n < 64.0 * n * log2(n))
         ++n;
     return n;
 }
