@@ -21,3 +21,18 @@
         Initialization: 循环开始前i=1，显然A[1]是数组的首个元素。
         Maintenance:循环每次向右移动一个位置，直到在适当的位置停下。
         Termination:如果在for循环中找到等于v的值就停下，返回i,否则返回nil。
+
+2.1-4:
+    BinarayAddition(A, B, n)
+        ▹ 声明数组C
+        do C[n + 1]
+            ▹ 进位标志
+            do carryBit <- 0
+                for i <- 1 to n
+                    do ret = A[i] + B[i] + carryBit
+                        C[i] = ret % 2
+                        if ret > 1
+                            carryBit = 1
+                        else
+                            carryBit = 0
+        return C
