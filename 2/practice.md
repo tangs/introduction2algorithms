@@ -36,3 +36,7 @@
                         else
                             carryBit = 0
         return C
+
+2.2-1:
+    Θ(n^3)
+    
