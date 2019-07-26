@@ -9,4 +9,15 @@
     e): 26 31 41 41 59 -> 58
                      <-----
     f): 26 31 41 41 58 59
-    
+
+2.1-3:
+    SearchIndex(A, v)
+        for i <- 1 to length[A]
+            if A[i] == v
+                return i
+        return nil
+
+    analysis:
+        Initialization: 循环开始前i=1，显然A[1]是数组的首个元素。
+        Maintenance:循环每次向右移动一个位置，直到在适当的位置停下。
+        Termination:如果在for循环中找到等于v的值就停下，返回i,否则返回nil。
