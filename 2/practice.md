@@ -56,3 +56,25 @@
       3 26 41 52     9 38 49 57
     3 41    26 52   38 57   9 49
     3 41    52 26   38 57   9 49
+
+2.3-2:
+    MERGE(A, p, q, r)
+        n1 <- q - p + 1
+        n2 <- r - q
+    create arrays L[1..n1] and R[1..n2]
+    for i <- 1 to n1
+        do L[i] = A[p + i - 1]
+    for j <- 1 to n2
+        do R[j] = A[q + j]
+    i <- 1
+    j <- 1
+    k <- p
+    while i < n1 and j < n2
+        do if L[i] <= R[j]
+            then A[k] <- L[i]
+                i <- i + 1
+            else A[k] <- R[j]
+                j <- j + 1
+            k <- k + 1
+    for 
+
