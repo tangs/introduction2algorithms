@@ -61,22 +61,22 @@
     MERGE(A, p, q, r)
         n1 <- q - p + 1
         n2 <- r - q
-    create arrays L[1..n1] and R[1..n2]
-    for i <- 1 to n1
-        do L[i] = A[p + i - 1]
-    for j <- 1 to n2
-        do R[j] = A[q + j]
-    i <- 1
-    j <- 1
-    k <- p
-    while i < n1 and j < n2
-        do if L[i] <= R[j]
-            then A[k] <- L[i]
-                i <- i + 1
-            else A[k] <- R[j]
-                j <- j + 1
-            k <- k + 1
-    for 
+        create arrays L[1..n1] and R[1..n2]
+        for i <- 1 to n1
+            do L[i] = A[p + i - 1]
+        for j <- 1 to n2
+            do R[j] = A[q + j]
+        i <- 1
+        j <- 1
+        k <- p
+        while i < n1 and j < n2
+            do  if L[i] <= R[j]
+                then A[k] <- L[i]
+                    i <- i + 1
+                else A[k] <- R[j]
+                    j <- j + 1
+                k <- k + 1
+        for 
 
 2.3-3:
     证明:
@@ -88,3 +88,33 @@
             1                   if n == 2
     T(n)    
             T(n - 1) + n - 1    if n > 2
+
+2.3-5:
+    BinarySearch(A, n, v)
+        do  if n < 1
+            return nil
+        s <- 1
+        e <- n
+        idx <- n / 2
+        while 1
+            do  if A[idx] == v
+                then return idx
+                else if A[idx] < v
+                    e = n - 1
+                else
+                    s = n + 1
+                do  if e < s
+                    then return nil
+                    else idx = (s + e) / 2
+
+    BinarySearchRecursion(A, n, v, s, e)
+        do  if s > e
+            then return nil
+        idx = (e + s) / 2
+        do  if A[idx] == v
+            then return idx
+            else if A[idx] > v
+                s = idx + 1
+            else
+                e = idx - 1
+        return BinarySearchRecursion(A, n, v, s, e)
