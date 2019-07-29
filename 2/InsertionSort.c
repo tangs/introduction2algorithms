@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "../commom/tools.h"
+#include "../common/tools.h"
 
 void InsertionSort(int *A, int n) {
     for (int i = 1; i < n; ++i) {

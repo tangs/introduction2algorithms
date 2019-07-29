@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "../commom/tools.h"
+#include "../common/tools.h"
 
 void Merge(int *A, int l, int m, int r) {
     int n1 = m - l + 1;
