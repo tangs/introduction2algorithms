@@ -95,8 +95,8 @@
             return nil
         s <- 1
         e <- n
-        idx <- n / 2
         while 1
+            idx <- n / 2
             do  if A[idx] == v
                 then return idx
                 else if A[idx] < v
